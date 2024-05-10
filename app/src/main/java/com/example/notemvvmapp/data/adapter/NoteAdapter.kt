@@ -16,6 +16,7 @@ class NoteAdapter(val activity: Activity) : RecyclerView.Adapter<NoteAdapter.MyV
     class MyViewHolder(val binding: NoteLayoutBinding) : RecyclerView.ViewHolder(binding.root)
 
     private val differCallback = object : DiffUtil.ItemCallback<Note>() {
+
         override fun areItemsTheSame(oldItem: Note, newItem: Note): Boolean {
             return oldItem.id == newItem.id &&
                     oldItem.noteTitle == newItem.noteTitle &&
@@ -42,9 +43,10 @@ class NoteAdapter(val activity: Activity) : RecyclerView.Adapter<NoteAdapter.MyV
 
     override fun getItemCount(): Int = differ.currentList.size
 
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
         val currentNote = differ.currentList[position]
+
         holder.binding.noteTitle.text = currentNote.noteTitle
         holder.binding.noteDesc.text = currentNote.noteDescription
 

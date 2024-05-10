@@ -30,7 +30,6 @@ import java.util.Date
 @AndroidEntryPoint
 class AddNoteFragment : Fragment(R.layout.fragment_add_note), MenuProvider {
 
-
     private var _binding: FragmentAddNoteBinding? = null
     private val binding get() = _binding!!
 
@@ -78,9 +77,11 @@ class AddNoteFragment : Fragment(R.layout.fragment_add_note), MenuProvider {
             createDate = Date(),
             modifyDate = Date(),
         )
+
         noteViewModel.addNote(note)
-        Toast.makeText(activity, "Saved Success", Toast.LENGTH_SHORT)
-            .show()
+
+        Toast.makeText(activity, "Saved Success", Toast.LENGTH_SHORT).show()
+
         view.findNavController().popBackStack(R.id.homeFragment, false)
     }
 

@@ -15,7 +15,6 @@ class NoteRepositoryImpl @Inject constructor(
 
     suspend fun updateNote(note: Note) = noteDao.updateNote(note)
 
-
     fun getAllNotes() = noteDao.getAllNotes()
 
     fun searchNote(query: String?) = noteDao.searchNote(query)
