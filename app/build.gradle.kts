@@ -61,9 +61,12 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     implementation("androidx.room:room-ktx:$roomVersion")
     // Navigation
-    val navVersion = "2.7.7"
-    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
-    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+
+    var nav_version = "2.7.7"
+// Navigation Component
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+
     // Life Cycle Arch
     val lifecycleVersion = "2.6.2"
     // ViewModel
@@ -79,6 +82,6 @@ dependencies {
 }
 
 // Allow references to generated code
-kapt{
+kapt {
     correctErrorTypes = true
 }

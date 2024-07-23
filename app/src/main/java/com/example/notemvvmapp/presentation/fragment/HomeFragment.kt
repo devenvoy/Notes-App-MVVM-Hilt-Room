@@ -143,9 +143,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),
         val searchQuery = "%$query"
 
         noteViewModel.searchNote(searchQuery).observe(this) { notes ->
-
             rvAdapter.differ.submitList(notes)
-
         }
     }
 }

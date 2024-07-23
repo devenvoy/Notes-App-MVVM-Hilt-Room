@@ -23,7 +23,6 @@ import com.example.notemvvmapp.databinding.FragmentEditNoteBinding
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Date
 
-
 @AndroidEntryPoint
 class EditNoteFragment : Fragment(R.layout.fragment_edit_note), MenuProvider {
 

@@ -1,4 +1,4 @@
-package com.example.notemvvmapp
+package com.example.notemvvmapp.di
 
 import android.content.Context
 import androidx.room.Room
@@ -12,19 +12,19 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class AppModule {
+object AppModule {
 
 
-//     Tell Dagger-Hilt to create a singleton accessible everywhere in ApplicationComponent (i.e. everywhere in the application)
-//    @Singleton
+    //     Tell Dagger-Hilt to create a singleton accessible everywhere in ApplicationComponent (i.e. everywhere in the application)
+    @Singleton
     @Provides
     fun provideYourDatabase(@ApplicationContext app: Context) = Room.databaseBuilder(
         app, NoteDatabase::class.java, "note_db"
     ).build()
 
 
-//     The reason we can construct a database for the repo
-//        @Singleton
+    //     The reason we can construct a database for the repo
+    @Singleton
     @Provides
     fun provideYourDao(db: NoteDatabase) = db.getNoteDao()
 
